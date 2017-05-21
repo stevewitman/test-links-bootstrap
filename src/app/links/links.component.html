@@ -1,4 +1,10 @@
-<div *ngFor="let link of links" class="links-div">
+<div *ngFor="let link of links | async" class="links-div">
   <app-fav></app-fav>
   <a href="{{link.url}}">{{ link.name }}</a>
+</div>
+
+<div>
+  <input placeholder="name" #name>
+  <input placeholder="url" #url>
+  <button class="btn btn-primary" (click)="send(name, url)">Send</button>
 </div>

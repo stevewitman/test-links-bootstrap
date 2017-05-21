@@ -156,3 +156,46 @@ Install AngularFire 2 and Firebase
 ```
 npm install angularfire2 firebase --save
 ```
+
+Import in `app.module.ts' and add to imports array
+
+```
+import { AngularFireModule } from 'angularfire2';
+```
+
+```
+AngularFireModule.initializeApp(),
+```
+
+Copy configuration object from Firebase and use as argument for initializeApp() method
+
+```
+AngularFireModule.initializeApp({
+    apiKey: "...",
+    authDomain: "...",
+    databaseURL: "...",
+    projectId: "...",
+    storageBucket: "...",
+    messagingSenderId: "..."
+}),
+```
+
+Create a links service
+
+```
+ng generate service links
+```
+
+Import AngularFireModule into  `links.service.ts`
+
+```
+import { AngularFireModule } from 'angularfire2';
+```
+
+*this may be needed ...*
+
+```
+npm install promise-polyfill --save
+```
+
+
